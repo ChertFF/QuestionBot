@@ -1,9 +1,5 @@
-from aiogram import Dispatcher
-
+from .private_chat import IsPrivate
+from .admins import IsAdmin
 from loader import dp
-# from .is_admin import AdminFilter
-
-
-if __name__ == "filters":
-    # dp.filters_factory.bind(AdminFilter)
-    pass
+dp.filters_factory.bind(IsPrivate)
+dp.filters_factory.bind(IsAdmin)
